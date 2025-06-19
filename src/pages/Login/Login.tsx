@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
-import background from "../../assets/oncaDesktop.png";
 
 function Login() {
   const navigate = useNavigate();

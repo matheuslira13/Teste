@@ -1,10 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
-import background from "../../assets/oncaDesktop.png";
-import {
-  DropDownInfoDetails,
-  type DropDownInfoDetailsProps,
-} from "../../components/DropDownInfoDetails";
+import { DropDownInfoDetails } from "../../components/DropDownInfoDetails";
 import { mock } from "../../mock";
 
 function Home() {
@@ -15,9 +11,9 @@ function Home() {
     navigate("/login");
   };
 
-  const handleDownload = (descricao: any) => {
+  /*   const handleDownload = (descricao: any) => {
     alert(`Baixando ofício de: ${descricao}`);
-  };
+  }; */
 
   return (
     <div className="homeContainer">
