@@ -1,0 +1,48 @@
+.homeContainer {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 10px;
+  color: white;
+  width: 90%;
+  height: 80vh;
+  overflow: auto;
+}
+
+.buttonHome {
+  padding: 10px 20px;
+  background-color: #ffaa00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container h2 {
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: left;
+}
+
+.status-ok {
+  color: lightgreen;
+}
+
+.status-pendente {
+  color: red;
+}

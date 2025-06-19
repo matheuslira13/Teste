@@ -1,0 +1,51 @@
+.card {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 10px;
+  color: white;
+  width: 600px;
+  max-width: 90%;
+}
+
+.card input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.card button {
+  padding: 10px 20px;
+  background-color: #ffaa00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.status-ok {
+  color: lightgreen;
+}
+
+.status-pendente {
+  color: red;
+}

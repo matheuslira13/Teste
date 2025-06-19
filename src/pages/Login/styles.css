@@ -1,0 +1,41 @@
+.containerLogin {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginContainer {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 16px;
+  color: white;
+  max-width: 600px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputUserClass {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.buttonLogin {
+  padding: 10px 20px;
+  background-color: #ffaa00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.titleLogin {
+  text-align: center;
+}
