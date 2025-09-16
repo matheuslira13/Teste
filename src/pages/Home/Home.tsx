@@ -35,6 +35,8 @@ function Home() {
           processo={item.processo}
           solicitacao={item.solicitacao}
           status={item.status}
+          descricao={item.descricao}
+          designacao={item.designacao}
         />
       ))}
     </div>

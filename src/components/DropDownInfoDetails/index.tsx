@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Modal } from "../Modal";
+import "./styles.css";
 
 export type DropDownInfoDetailsProps = {
   nome: string;
@@ -10,6 +12,8 @@ export type DropDownInfoDetailsProps = {
   estado: string;
   end: string;
   cep: string;
+  descricao: string;
+  designacao: string;
 };
 
 export const DropDownInfoDetails = ({
@@ -22,50 +26,42 @@ export const DropDownInfoDetails = ({
   processo,
   solicitacao,
   status,
+  descricao,
+  designacao,
 }: DropDownInfoDetailsProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [processoInput, setProcessoInput] = useState(processo);
+  const [solicitacaoInput, setSolicitacaoInput] = useState(solicitacao);
+  const [designacaoInput, setDesignacaoInput] = useState(designacao);
+  const [descricaoInput, setDescricaoInput] = useState(descricao);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
+  const toggleDropdownModal = () => setIsOpenModal(!isOpenModal);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        border: "2px solid #FFF",
-        margin: 12,
-        padding: 12,
-        backgroundColor: "rgba(0, 0, 0, 0.8)",
-        color: "#fff",
-      }}
-    >
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(5, 1fr)", // Distribui igualmente
-
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: 12,
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+    <div className="containerDropDownInfo">
+      <div className="subContainerDropDownInfo">
+        <div className="infoDisplay">
           <p>Nome:</p> <span>{nome}</span>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <div className="infoDisplay">
           <p>Solicitação:</p> <span>{solicitacao}</span>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <div className="infoDisplay">
           <p>Status:</p>{" "}
           <span style={{ color: status === "Enviado" ? "#d2e1a7" : "#ff5a6a" }}>
             {status}
           </span>
         </div>
-        <button style={{ width: 200 }} onClick={() => file}>
+        <button className="btnDropDowInfo" onClick={toggleDropdownModal}>
+          Editar
+        </button>
+        <button className="btnDropDowInfo" onClick={() => file}>
           Download
         </button>
 
-        <button style={{ width: 200 }} onClick={toggleDropdown}>
+        <button className="btnDropDowInfo" onClick={toggleDropdown}>
           {isOpen ? "Fechar Detalhes" : "Ver Detalhes"}
         </button>
       </div>
@@ -81,6 +77,53 @@ export const DropDownInfoDetails = ({
           <p>CEP: {cep}</p>
         </div>
       )}
+      <Modal
+        onClose={() => setIsOpenModal(false)}
+        open={isOpenModal}
+        closeOnOverlay={false}
+        title={`Oficio ${oficio}`}
+      >
+        <div className="containerLabelModal">
+          <p className="labelModal">Nome</p>
+          <p className="textInputDropDown"> {nome}</p>
+        </div>
+        <div className="containerLabelModal">
+          <p className="labelModal">solicitação</p>
+          <input
+            type="text"
+            value={solicitacaoInput}
+            className="textInputDropDown"
+            onChange={(e) => setSolicitacaoInput(e.target.value)}
+          />
+        </div>
+
+        <div className="containerLabelModal">
+          <p className="labelModal">Processo</p>
+          <input
+            type="text"
+            value={processoInput}
+            onChange={(e) => setProcessoInput(e.target.value)}
+            className="textInputDropDown"
+          />
+        </div>
+        <div className="containerLabelModal">
+          <p className="labelModal">Designação</p>
+          <input
+            type="text"
+            value={designacaoInput}
+            className="textInputDropDown"
+            onChange={(e) => setDesignacaoInput(e.target.value)}
+          />
+        </div>
+        <div className="containerLabelModal">
+          <p className="labelModal">Descrição </p>
+          <textarea
+            value={descricaoInput}
+            onChange={(e) => setDescricaoInput(e.target.value)}
+            className="textAreaDropDown"
+          />
+        </div>
+      </Modal>
     </div>
   );
 };

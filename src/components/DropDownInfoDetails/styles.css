@@ -1,0 +1,75 @@
+.containerDropDownInfo {
+  display: flex;
+  flex-direction: column;
+  border: "2px solid #FFF";
+  margin: 12px;
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: "#fff";
+}
+.subContainerDropDownInfo {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.infoDisplay {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btnDropDowInfo {
+  width: 200px;
+}
+.containerModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+p {
+  margin: 0;
+}
+.containerLabelModal {
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+}
+.labelModal {
+  font-weight: bold;
+}
+.textInputDropDown {
+  width: 100%;
+  transition: border-color 0.1s ease;
+  text-align: justify;
+  color: #000;
+  border: 1px solid #a1a0a0;
+  background-color: transparent;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+  overflow: auto;
+}
+.textAreaDropDown {
+  border: 2px solid orange;
+  width: 100%;
+  transition: border-color 0.1s ease;
+  text-align: justify;
+  color: #000;
+  border: 1px solid #a1a0a0;
+  background-color: transparent;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+  overflow: auto;
+  height: 500px;
+}
+.textInputDropDown:focus {
+  border: 2px solid orange;
+}
+.textAreaDropDown:focus {
+  border: 2px solid orange;
+}
